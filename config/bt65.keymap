@@ -12,31 +12,31 @@
 
 		default_layer {
 				// ------------------------------------------------------------------------------------------------------------
-				// |  `  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  |  -  |  =  |BKSP | DEL | INS		|
-				// | TAB  |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |  [  |  ]  |   \    | DEL		|
-				// | CAPS  |  A  |  S  |  D  |  F  |  G  |  H  |  J  |  K  |  L  |  ;  |  '  |     ENTER    |PGUP	|
-				// |  SHIFT| NONE |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  | /   |   SHIFT  | UP   | PGDN|
-				// |  CTL  |  WIN  |  ALT  |            SPACE               | ALT | 1    |  MENU| LEFT |  DOWN    | RIGHT	|
+				// |  `  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  |  -  |  =  | \ | DEL |     NONE   	|
+				// | TAB  |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |  [  |  ]  |   BSPC    |      SPACE	|
+				// | CAPS  |  A  |  S  |  D  |  F  |  G  |  H  |  J  |  K  |  L  |  ;  |  '  |     ENTER         |   HOME	|
+				// |  SHIFT| NONE |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  | /   |   SHIFT  | UP    |   END    |
+				// |  LCTL  |  LALT  |  LCMD  |            SPACE               | NONE |  RCMD |  1 | LEFT | DOWN |  RIGHT	|
 				// ------------------------------------------------------------------------------------------------------------
 			bindings = <
 
-				&kp ESC &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp  N8   &kp  N9   &kp N0 &kp MINUS &kp EQUAL &kp BKSP &kp DEL &kp INS
-				&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp  I    &kp  O  &kp  P   &kp LBKT &kp RBKT  	&kp BSLH &kp DEL
-				&kp CLCK  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp  K    &kp  L  &kp SEMI &kp SQT           	&kp RET &kp PG_UP
-				&kp LSHFT &none &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH   &kp RSHFT &none &kp UP &kp PG_DN
-				&kp LCTRL &kp LGUI &kp LALT            &kp SPACE                          &kp RALT  &mo 1 &kp RCTRL &kp LEFT &kp DOWN &kp RIGHT
+				&kp ESC &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp  N8   &kp  N9   &kp N0 &kp MINUS &kp EQUAL &kp BSLH &kp DEL &none
+				&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp  I    &kp  O  &kp  P   &kp LBKT &kp RBKT  	&kp BSPC  &kp SPACE
+				&kp CLCK  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp  K    &kp  L  &kp SEMI &kp SQT           	&kp RET   &kp HOME
+				&kp LSHFT &none &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH   &kp RSHFT &none &kp UP  &kp END
+				&kp LCTRL &kp LGUI &kp LALT            &kp SPACE                          &none  &mo 1 &kp RCTRL &kp LEFT &kp DOWN &kp RIGHT
 			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+			sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
 		};
 		raise {
 			bindings = <
-				&kp ESC &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp  F8   &kp  F9   &kp F10  &kp F11 &kp F12 &bl BL_TOG &none &rgb_ug RGB_TOG
-				&trans &trans &kp UP &trans &trans &trans &trans &trans &kp INS &trans &kp PSCRN &kp SLCK &kp PAUSE_BREAK &reset &rgb_ug RGB_HUI
-				&trans    &kp LEFT &kp DOWN &kp RIGHT &trans &trans &trans &trans &trans &trans &kp HOME  &kp PG_UP   &bootloader &rgb_ug RGB_HUD
-				&kp C_PREV &trans &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &trans &trans &trans &trans &trans &kp END &kp PG_DN  &kp C_NEXT &none &trans &bl BL_INC
-				&bt BT_PRV &bt BT_NXT  &trans              &trans                            &trans   &trans   &trans &bt BT_CLR &trans &bl BL_DEC
+				&kp GRAVE &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp  F8   &kp  F9   &kp F10  &kp F11 &kp F12 &none &reset &none
+				&trans &trans &kp UP &trans &trans &trans &trans &trans &kp INS &trans &kp PSCRN &kp SLCK &kp PAUSE_BREAK &bl BL_TOG &kp SPACE
+				&trans    &kp LEFT &kp DOWN &kp RIGHT &trans &trans &trans &trans &trans &trans &kp HOME  &kp PG_UP   &bootloader &kp PG_UP
+				&kp C_PREV &trans &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &trans &trans &trans &trans &trans &kp END &kp PG_DN  &kp C_NEXT &none &rgb_ug RGB_HUI &kp PG_DN
+				&bt BT_PRV &bt BT_NXT  &trans              &trans                            &none   &trans   &trans &bt BT_CLR &rgb_ug RGB_HUD &rgb_ug RGB_TOG
 			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+			sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
 		};
 	};
 };
